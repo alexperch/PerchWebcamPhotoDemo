@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <!-- /JQUERY -->
+
+    <title>Invisalign Video Demo</title>
+
+    <!-- Style for Blur, Buttons and Popup -->
+    <style>
+        .blurred {
+            -webkit-filter: blur(2px);
+            -moz-filter: blur(2px);
+            -o-filter: blur(2px);
+            -ms-filter: blur(2px);
+            filter: blur(2px);
+        }
+        .customBtn, .customBtn2, .customBtn3 {
+            width: 10vw;
+            display: block;
+            background-color: black;
+            color: white;
+            border-radius: 2em;
+            font-size: 2vw;
+        }
+
+        .customBtn {
+            position: absolute;
+            top: 25vw;
+            left: 28vw;
+        }
+
+        .customBtn2 {
+            position:relative;
+            display: table;
+            margin: 1vh auto;
+            font-size: 1vw;
+        }
+
+        .customBtn3 {
+            position: absolute;
+            top: 5vw;
+            left: -30vw;
+            width: min-content;
+        }
+
+        .popup {
+            margin: auto;
+            width: min-content;
+            position: absolute;
+            top:1vh;
+            left: 35vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <img src="bg.jpeg" alt="Background Image from Humans of NY" style="width: 99vw;">
+        <button id="popupButton" class="customBtn" onclick="showPopup();">Click Me!</button>
+    </div>
+    <div class="popup" id="popup">
+        <!-- From https://davidwalsh.name/browser-camera -->
+        <video id="video" style="width:30vw;" autoplay></video>
+        <a id="snap"><button class="customBtn2">Snap Photo</button></a>
+        <canvas id="canvas" width="640" height="480"></canvas>
+        <button onclick="hidePopup()" class="customBtn3">X</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
