@@ -30,6 +30,6 @@ This is a demo of how to use a webcam to take a photo with a viewfinder.
 
 ## DISCLAIMER
 
-_This demo is not for distribution and and and the media it includes is not intended to reflect the work of Perch Interactive or its affiliates._
+_This demo is not for distribution and the media it includes is not intended to reflect the work of Perch Interactive or its affiliates._
 
 **Photo Reference**: [Medium.com](https://medium.com/rta902/humans-of-new-york-social-media-simplicity-59e951b8b561)
