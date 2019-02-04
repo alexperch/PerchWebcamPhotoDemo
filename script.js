@@ -16,6 +16,14 @@ if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         video.play();
     });
 }
+
+/* ** For multiple cameras **
+navigator.mediaDevices.getUserMedia({
+  video: {
+    deviceId: { exact: camera1Id }
+  }
+});
+*/
 else if(navigator.getUserMedia) { // Standard
     navigator.getUserMedia({ video: true }, function(stream) {
         video.src = stream;
