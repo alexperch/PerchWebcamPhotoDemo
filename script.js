@@ -20,7 +20,7 @@ if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 /* ** For multiple cameras **
 navigator.mediaDevices.getUserMedia({
   video: {
-    deviceId: { exact: camera1Id }
+    deviceId: { exact: cameraId } // can grab cameraId from getVidDevices
   }
 });
 */
@@ -65,6 +65,18 @@ function hidePopup() {
     $('#popup').hide();
     $('#main').removeClass('blurred');
     $('#popupButton').attr('disabled', false);
+}
+
+function getVidDevices(){
+    navigator.mediaDevices.enumerateDevices().then((d)=>{
+        vidIds = [];
+        for (var i = 0; i<d.length; i++) {
+            if (d[i].kind == "videoinput") {
+                vidIds.push(d[i].deviceId);
+            }
+        }
+        return vidIds; // return array of deviceId's of video inputs
+    });
 }
 
 $(document).ready(()=>{
