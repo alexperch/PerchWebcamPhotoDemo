@@ -2,7 +2,9 @@
 
 ## Description
 
-This is a demo of how to use a webcam to take a photo with a viewfinder.
+This is a demo of how to use a webcam to take a photo with a viewfinder. [Demo is live on GH pages](https://alexperch.github.io/PerchWebcamPhotoDemo/)!
+
+[About the Issue](DESCRIPTION.md)
 
 ## To Use
 
@@ -20,6 +22,44 @@ This is a demo of how to use a webcam to take a photo with a viewfinder.
 * Viewfinder functionality
 * Video frame manipulation
 * File downloading
+
+## Technology Description
+
+Instead of using the problematic method [examined in the problem description document](DESCRIPTION.md), this implements the following code to grab the webcam video stream for the viewfinder:
+
+```js
+var video = document.getElementById('video');
+navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+    video.srcObject = stream;
+    video.play();
+});
+```
+
+It then snaps a photo and stores it in a canvas element using the following code:
+
+```js
+// Elements for taking the snapshot
+var canvas = document.getElementById('canvas');
+var context = canvas.getContext('2d');
+document.getElementById("snap").addEventListener("click", function() {
+    context.drawImage(video, 0, 0, video.videoWidth/3, video.videoHeight/3);
+});
+```
+
+The image is then downloaded to the user's local with the following code:
+
+```js
+var download = document.getElementById("snap");
+var image = document.getElementById("canvas").toDataURL("image/png").replace("image/png", "image/octet-stream");
+download.setAttribute("href", image);
+download.setAttribute("download", "image.png");
+```
+
+## Notes
+
+* The blur affect uses the CSS filter style attributes. These are all fairly specific to their respective browsers. The CSS in [index.html](index.html) between the `<script>` tags under the `.blurred` style definition is pretty comprehensive.
+* This code uses the proper method of requesting access to the webcam, please follow the `if` chain of requests for media access for best results.
+* Included is a way of accessing multiple cameras if they're available. Little consideration was given to implementation so far.
 
 ## Questions
 
