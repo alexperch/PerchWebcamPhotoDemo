@@ -24,4 +24,4 @@ The idea behind not implementing this in a desktop OS is that everyone uses a di
 
 ## Proposed Resolution
 
-This specific application will take the file and use modify it anyway (regardless of OS). In this repo, a implementation of a popup viewfinder and photo-taking system was implemented to alleviate the above issue. Please read the [README](README.md) for a description of the technology.
+This specific application will take the file and use modify it anyway (regardless of OS). In this repo, a implementation of a popup viewfinder and photo-taking system was implemented to alleviate the above issue. Please read the [README](README.md#technology-description) for a description of the technology.

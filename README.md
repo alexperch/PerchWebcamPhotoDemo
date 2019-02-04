@@ -25,7 +25,7 @@ This is a demo of how to use a webcam to take a photo with a viewfinder. [Demo i
 
 ## Technology Description
 
-Instead of using the problematic method [examined in the problem description document](DESCRIPTION.md), this implements the following code to grab the webcam video stream for the viewfinder:
+Instead of using the problematic method [examined in the problem description document](DESCRIPTION.md#current-issue), this implements the following code to grab the webcam video stream for the viewfinder:
 
 ```js
 var video = document.getElementById('video');
@@ -57,7 +57,7 @@ download.setAttribute("download", "image.png");
 
 ## Notes
 
-* The blur affect uses the CSS filter style attributes. These are all fairly specific to their respective browsers. The CSS in [index.html](index.html) between the `<script>` tags under the `.blurred` style definition is pretty comprehensive.
+* The blur affect uses the CSS filter style attributes. These are all fairly specific to their respective browsers. The CSS in [index.html](index.html#L19) between the `<script>` tags under the `.blurred` style definition is pretty comprehensive.
 * This code uses the proper method of requesting access to the webcam, please follow the `if` chain of requests for media access for best results.
 * Included is a way of accessing multiple cameras if they're available. Little consideration was given to implementation so far.
 
